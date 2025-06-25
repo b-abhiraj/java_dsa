@@ -2,6 +2,7 @@ package Basics;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Spliterator;
 
 public class MyLinkedList {
 
@@ -253,6 +254,207 @@ public class MyLinkedList {
 
 		l23.offerLast("Geek1");
 		System.out.println(l23);
+
+		// Peek Method
+		System.out.println("\nPeek Method");
+		LinkedList li1 = new LinkedList();
+		li1.add("Geeks");
+		li1.add(4);
+		li1.add("Geeks");
+		li1.add("8");
+		System.out.println("The original list: " + li1);
+		System.out.println("Looking for first element using peek: " + li1.peek());
+
+		// Peek First Method
+		System.out.println("\nPeek First Method");
+		LinkedList li2 = new LinkedList();
+		li2.add("Geeks");
+		li2.add(4);
+		li2.add("Geeks");
+		li2.add("8");
+		System.out.println(li2.peekFirst());
+
+		// Peek Last Method
+		System.out.println("\nPeek Last Method");
+		LinkedList li3 = new LinkedList();
+		li3.add("Geeks");
+		li3.add(4);
+		li3.add("Geeks");
+		li3.add("8");
+		System.out.println(li3.peekLast());
+
+		// Poll Method
+		System.out.println("\nPoll Method");
+		LinkedList li4 = new LinkedList();
+		li4.add("Geeks");
+		li4.add(4);
+		li4.add("Geeks");
+		li4.add("8");
+		System.out.println("Initial List: " + li4);
+		System.out.println("First element removal: " + li4.poll());
+
+		// Poll First Method
+		System.out.println("\nPoll First Method");
+		LinkedList li5 = new LinkedList();
+		li5.add("Geeks");
+		li5.add(4);
+		li5.add("Geeks");
+		li5.add("8");
+		System.out.println("Inital List: " + li5);
+		System.out.println("Popping the head element: " + li5.pollFirst());
+
+		// Poll Last Method
+		System.out.println("\nPoll Last Method");
+		LinkedList li6 = new LinkedList();
+		li6.add("Geeks");
+		li6.add(4);
+		li6.add("Geeks");
+		li6.add("8");
+		System.out.println("Initial List: " + li6);
+		System.out.println("Popping the last element: " + li6.pollLast());
+		System.out.println("List after poll opr: " + li6);
+
+		// Pop Method
+		System.out.println("\nPop method");
+		LinkedList li7 = new LinkedList();
+		li7.add(10);
+		li7.add(20);
+		li7.add(30);
+		li7.add(40);
+		System.out.println("Poping the first element: " + li7.pop());
+		System.out.println("List after wards: " + li7);
+
+		// Push Method
+		System.out.println("\nPush Method");
+		LinkedList li8 = new LinkedList();
+		li8.add("Geeks");
+		li8.add(4);
+		li8.add("Geeks");
+		System.out.println("Before push opr: " + li8);
+		li8.push("Geek");
+		System.out.println("After push opr: " + li8);
+
+		// Remove Method
+		System.out.println("\nRemove Method");
+		LinkedList li9 = new LinkedList();
+		li9.add("Geeks");
+		li9.add("For");
+		li9.add("Geeks");
+		li9.add("Geek");
+		li9.add(10);
+		li9.add(20);
+		System.out.println("Remove: " + li9.remove());
+		System.out.println("Remove by index: " + li9.remove(2));
+		System.out.println("Remove by value: " + li9.remove("20"));
+		System.out.println("Final list: " + li9);
+
+		// Remove First Method
+		System.out.println("\n Remove First Method");
+		LinkedList li10 = new LinkedList();
+		li10.add(100);
+		li10.add(200);
+		li10.add(300);
+		li10.add(400);
+		System.out.println("Before removing: " + li10);
+		li10.removeFirst();
+		System.out.println("After removing: " + li10);
+
+		// remove first occurrence
+		System.out.println("\nRemove First Occurrence");
+		LinkedList li11 = new LinkedList();
+		li11.add("A");
+		li11.add("B");
+		li11.add("C");
+		li11.add("D");
+		li11.add("B");
+		System.out.println("Before Removing: " + li11);
+		li11.removeFirstOccurrence("B");
+		System.out.println("After Removing: " + li11);
+
+		// remove Last method
+		System.out.println("\nRemove Last Method");
+		LinkedList li12 = new LinkedList();
+		li12.add(100);
+		li12.add(200);
+		li12.add(300);
+		li12.add(400);
+		li12.add(500);
+		System.out.println("Before Removing: " + li12);
+		li12.removeLast();
+		System.out.println("After Removing: " + li12);
+
+		// remove last occurrence method
+		System.out.println("\nRemove Last Occurrence Method");
+		LinkedList li13 = new LinkedList();
+		li13.add("A");
+		li13.add("B");
+		li13.add("C");
+		li13.add("B");
+		li13.add("D");
+		System.out.println("Before Removing: " + li13);
+		li13.removeLastOccurrence("B");
+		System.out.println("After Removing: " + li13);
+
+		// Set Method
+		System.out.println("\nSet Method");
+		LinkedList li14 = new LinkedList();
+		li14.add("Geeks");
+		li14.add("For");
+		li14.add("Geeks");
+		System.out.println("Before set opr: " + li14);
+		li14.set(1, "GFG");
+		System.out.println("After set opr: " + li14);
+
+		// Size function
+		System.out.println("\nSize Function");
+		LinkedList li15 = new LinkedList();
+		li15.add(10);
+		li15.add(20);
+		li15.add(30);
+		li15.add(40);
+		li15.add(50);
+		System.out.println("Size of the linked list: " + li15.size());
+
+		// spliterator method
+		System.out.println("\nSpliterator Method");
+		LinkedList li16 = new LinkedList();
+		li16.add(10);
+		li16.add(20);
+		li16.add(30);
+		li16.add(40);
+		li16.add(50);
+
+		Spliterator<Integer> it = li16.spliterator();
+		System.out.println("Splitting the list: ");
+		it.forEachRemaining(System.out::println);
+
+		// spliterator and print
+		LinkedList li17 = new LinkedList();
+		li17.add("Delhi 6");
+		li17.add("3 Idiots");
+		li17.add("Stree");
+		li17.add("Airlift");
+
+		Spliterator<String> si1 = li17.spliterator();
+		System.out.println("List of Movies");
+		si1.forEachRemaining(n -> System.out.println("Movie name: " + n));
+
+		// to Array
+		System.out.println("To Array Method");
+		LinkedList<Integer> li18 = new LinkedList<Integer>();
+		li18.add(10);
+		li18.add(20);
+		li18.add(30);
+		li18.add(40);
+		li18.add(50);
+
+		System.out.println("the LinkedList: " + li18);
+		Integer[] arr1 = new Integer[li18.size()];
+		li18.toArray(arr1);
+		System.out.println("After converting to array");
+		for (Integer v : arr1) {
+			System.out.print(v + " ");
+		}
 
 	}
 
