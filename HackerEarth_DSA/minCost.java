@@ -1,39 +1,50 @@
 package HackerEarth_DSA;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.*;
 
 public class minCost {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String[] mk = br.readLine().trim().split("\\s+");
-		String[] arr = br.readLine().trim().split("\\s+");
-		int m = Integer.parseInt(mk[0]);
-		int k = Integer.parseInt(mk[1]);
-		int[] nums = new int[m];
-		for (int i = 0; i < m; i++) {
-			nums[i] = Integer.parseInt(arr[i]);
-		}
-		for (int i = 0; i < nums.length; i++) {
-			if (nums[i] < 0) {
-				for (int j = Math.max(0, i - k); j < Math.min(m - 1, i + k); j++) {
-					if (nums[j] > 0) {
-						int temp = Math.min(-nums[i], nums[j]);
-						temp += nums[i];
-						temp -= nums[j];
-					}
-					if (nums[i] == 0)
-						break;
-				}
-			}
-		}
-		long cost = 0;
-		for (int num : nums) {
-			cost += Math.abs(num);
-		}
-		System.out.println(cost);
-	}
-
+    static class Pair {
+        int index, value;
+        Pair(int i, int v) { index = i; value = v; }
+    }
+    public static void main(String[] args) throws IOException {
+        var br = new BufferedReader(new InputStreamReader(System.in));
+        String[] mk = br.readLine().split(" ");
+        int n = Integer.parseInt(mk[0]), k = Integer.parseInt(mk[1]);
+        int[] nums = Arrays.stream(br.readLine().split(" "))
+                           .mapToInt(Integer::parseInt)
+                           .toArray();
+        Queue<Pair> positives = new LinkedList<>();
+        for (int i = 0; i < n; i++) {
+            if (nums[i] > 0) {
+                positives.offer(new Pair(i, nums[i]));
+            }
+            else if (nums[i] < 0) {
+                int deficit = -nums[i];
+                while (!positives.isEmpty() && deficit > 0) {
+                    Pair donor = positives.peek();
+                    if (donor.index < i - k) {
+                        positives.poll();
+                        continue;
+                    }
+                    if (donor.index > i + k) {
+                        break;
+                    }
+                    int transfer = Math.min(deficit, donor.value);
+                    nums[i] += transfer;
+                    nums[donor.index] -= transfer;
+                    donor.value -= transfer;
+                    deficit -= transfer;
+                    if (donor.value == 0) {
+                        positives.poll();
+                    }
+                }
+            }
+        }
+        long cost = 0;
+        for (int x : nums) cost += Math.abs(x);
+        System.out.println(cost);
+    }
 }
