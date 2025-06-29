@@ -1,4 +1,4 @@
-package Collections;
+package MyCollections;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class MyMapInterface {
 
+	@SuppressWarnings("removal")
 	public static void main(String[] args) {
 
 		Map<String, Integer> map = new HashMap<String, Integer>();
