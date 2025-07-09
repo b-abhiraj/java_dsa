@@ -78,6 +78,17 @@ public class MyHashSet {
 		hs5.clear();
 		System.out.println("Check now if empty: " + hs5.isEmpty());
 
+		// clone
+		System.out.println("\nCloning HashSet");
+		HashSet<String> hs6 = new HashSet<String>();
+		hs6.add("Geek1");
+		hs6.add("Geek2");
+		hs6.add("Geek3");
+		hs6.add("Geek4");
+		System.out.println("HashSet: " + hs6);
+		HashSet cs = new HashSet();
+		cs = (HashSet) hs6.clone();
+		System.out.println("Cloned HashSet: " + cs);
 	}
 
 }
