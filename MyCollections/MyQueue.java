@@ -8,6 +8,7 @@ import java.util.concurrent.PriorityBlockingQueue;
 
 public class MyQueue {
 
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		Queue<Integer> q = new LinkedList<Integer>();
 		System.out.println(q);

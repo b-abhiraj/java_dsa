@@ -51,5 +51,6 @@ public class Min_Length {
 				System.out.println(arrLength);
 			}
 		}
+		sc.close();
 	}
 }

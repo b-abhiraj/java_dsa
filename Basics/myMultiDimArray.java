@@ -23,25 +23,26 @@ public class myMultiDimArray {
 			System.out.println();
 		}
 
-//		Scanner sc = new Scanner(System.in);
-//		System.out.println("Enter the number of rows: ");
-//		int rows = sc.nextInt();
-//		System.out.println("Enter the number of cols: ");
-//		int cols = sc.nextInt();
-//		int[][] arr3 = new int[rows][cols];
-//		System.out.println("Enter the elements of array: ");
-//		for (int i = 0; i < rows; i++) {
-//			for (int j = 0; j < cols; j++) {
-//				arr3[i][j] = sc.nextInt();
-//			}
-//		}
-//		for (int i = 0; i < rows; i++) {
-//			for (int j = 0; j < cols; j++) {
-//				System.out.print(arr3[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of rows: ");
+		int rows = sc.nextInt();
+		System.out.println("Enter the number of cols: ");
+		int cols = sc.nextInt();
+		int[][] arr3 = new int[rows][cols];
+		System.out.println("Enter the elements of array: ");
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				arr3[i][j] = sc.nextInt();
+			}
+		}
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				System.out.print(arr3[i][j] + " ");
+			}
+			System.out.println();
+		}
 
+		sc.close();
 		int[][][] arr4 = { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } };
 		int n = arr4.length;
 		int m = arr4[0].length;

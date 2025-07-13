@@ -16,6 +16,7 @@ public class Fibo {
 		int n = sc.nextInt();
 		int result = nthFibo(n);
 		System.out.println(result);
+		sc.close();
 	}
 
 }

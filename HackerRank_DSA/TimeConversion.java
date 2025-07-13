@@ -20,6 +20,7 @@ public class TimeConversion {
 		} catch (Exception e) {
 			System.out.println();
 		}
+		sc.close();
 	}
 
 }

@@ -21,5 +21,6 @@ public class NonEmptySet {
 			}
 			System.out.println(min);
 		}
+		sc.close();
 	}
 }
