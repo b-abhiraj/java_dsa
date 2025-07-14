@@ -3,6 +3,7 @@ package Day3_Recursion_BackTrack;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class PermutationsStrings {
 
@@ -34,11 +35,13 @@ public class PermutationsStrings {
 	}
 
 	public static void main(String[] args) {
-		String s = "ABC";
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next();
 		List<String> res = findPermutation(s);
 		for (String x : res) {
 			System.out.print(x + " ");
 		}
+		sc.close();
 	}
 
 }
