@@ -6,26 +6,21 @@ import java.io.InputStreamReader;
 
 public class LoopingPart2 {
 
-	@SuppressWarnings("unused")
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int test_cases = Integer.parseInt(br.readLine().trim());
-		StringBuilder sb = new StringBuilder();
-		int num1,num2,num3,count;
-		while (test_cases-- > 0) {
+		for (int i = 0; i < test_cases; i++) {
 			String[] arr = br.readLine().trim().split("\\s+");
-			num1 = Integer.parseInt(arr[0]);
-			num2 = Integer.parseInt(arr[1]);
-			num3 = Integer.parseInt(arr[2]);
-			count = 0;
-			count += num1;
-			for (int i = 1; i < num3; i++) {
-//				count = Math.pow(2, i);
+			int a = Integer.parseInt(arr[0]);
+			int b = Integer.parseInt(arr[1]);
+			int n = Integer.parseInt(arr[2]);
+			int sum = a;
+			StringBuilder sb = new StringBuilder();
+			for (int j = 0; j < n; j++) {
+				sum += (int) Math.pow(2, j) * b;
+				sb.append(sum).append(" ");
 			}
-			test_cases--;
+			System.out.println(sb.toString().trim());
 		}
-		sb.delete(0, sb.capacity());
-
 	}
-
 }
