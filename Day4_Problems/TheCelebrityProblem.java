@@ -25,5 +25,4 @@ public class TheCelebrityProblem {
 		int[][] mat = { { 0, 1, 0 }, { 0, 0, 0 }, { 0, 1, 0 } };
 		System.out.println(celebrity(mat));
 	}
-
 }
